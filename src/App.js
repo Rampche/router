@@ -1,6 +1,11 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, Profile } from "react-router-dom";
 
 function App() {
+  const user = {
+    name: "Jonas",
+    age: 25,
+  };
+
   return (
     <>
       <header>
@@ -13,6 +18,18 @@ function App() {
 
           <NavLink className="item" to="/dashboard">
             Dashboard
+          </NavLink>
+
+          <NavLink className="item" to={`/profile/${user.name}/${user.age}`}>
+            Profile
+          </NavLink>
+
+          <NavLink className="item" to="/login">
+            Login
+          </NavLink>
+
+          <NavLink className="item" to="/stocks">
+            Stocks
           </NavLink>
         </nav>
       </header>
